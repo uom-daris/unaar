@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-gui-script minSpecVersion="1">
+<title>UnAAR</title>
+<background file="UnAAR-background.png" mime-type="image/png" alignment="bottomleft"  scaling="none"/>
+<pkg-ref id="aar.gui"/>
+<options customize="never" require-scripts="false"/>
+<choices-outline>
+    <line choice="default">
+        <line choice="aar.gui"/>
+    </line>
+</choices-outline>
+<choice id="default"/>
+<choice id="aar.gui" visible="false">
+    <pkg-ref id="aar.gui"/>
+</choice>
+<pkg-ref id="aar.gui" version="1.0" onConclusion="none">UnAAR-app.pkg</pkg-ref>
+</installer-gui-script>

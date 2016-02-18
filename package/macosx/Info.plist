@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>LSMinimumSystemVersion</key>
+  <string>10.7.4</string>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>English</string>
+  <key>CFBundleAllowMixedLocalizations</key>
+  <true/>
+  <key>CFBundleExecutable</key>
+  <string>UnAAR</string>
+  <key>CFBundleIconFile</key>
+  <string>UnAAR.icns</string>
+  <key>CFBundleIdentifier</key>
+  <string>aar.gui</string>
+  <key>CFBundleInfoDictionaryVersion</key>
+  <string>6.0</string>
+  <key>CFBundleName</key>
+  <string>UnAAR</string>
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+  <key>CFBundleShortVersionString</key>
+  <string>1.0</string>
+  <key>CFBundleSignature</key>
+  <string>????</string>
+  <!-- See http://developer.apple.com/library/mac/#releasenotes/General/SubmittingToMacAppStore/_index.html
+       for list of AppStore categories -->
+  <key>LSApplicationCategoryType</key>
+  <string>Unknown</string>
+  <key>CFBundleVersion</key>
+  <string>1.0</string>
+  <key>NSHumanReadableCopyright</key>
+  <string>Copyright (C) 2016</string>
+  <key>CFBundleDocumentTypes</key>
+  <array>
+    <dict>
+      <key>LSItemContentTypes</key>
+      <array>
+        <string>aar.gui.aar</string>
+      </array>
+
+      <key>CFBundleTypeName</key>
+      <string>Arcitecta Archive File</string>
+
+      <key>LSHandlerRank</key>
+      <string>Owner</string>
+
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+
+      <key>LSIsAppleDefaultForType</key>
+      <true/>
+
+    </dict>
+  </array>
+
+  <key>UTExportedTypeDeclarations</key>
+  <array>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>aar.gui.aar</string>
+      
+      <key>UTTypeIconFile</key>
+      <string>UnAAR.icns</string>
+      
+      <key>UTTypeDescription</key>
+      <string>Arcitecta Archive File</string>
+      <key>UTTypeConformsTo</key>
+      <array>
+          <string>public.data</string>
+      </array>
+
+
+      <key>UTTypeTagSpecification</key>
+      <dict>
+
+        <key>public.filename-extension</key>
+        <array>
+          <string>aar</string>
+          <string>AAR</string>
+        </array>
+      </dict>
+    </dict>
+  </array>
+
+  <key>NSHighResolutionCapable</key>
+  <string>true</string>
+ </dict>
+</plist>
