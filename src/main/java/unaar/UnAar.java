@@ -21,18 +21,20 @@ import javafx.stage.StageStyle;
 @SuppressWarnings("restriction")
 public class UnAar extends Application {
 
-    private static Logger logger = createLogger();
+    private static Logger _logger;
 
-    private static Logger createLogger() {
-        Logger logger = Logger.getLogger("unaar.log");
-        try {
-            FileHandler fh = new FileHandler("unaar.log");
-            fh.setFormatter(new SimpleFormatter());
-            logger.addHandler(fh);
-        } catch (Throwable e) {
-            e.printStackTrace(System.err);
+    static Logger logger() {
+        if (_logger == null) {
+            _logger = Logger.getLogger("unaar.log");
+            try {
+                FileHandler fh = new FileHandler("unaar.log");
+                fh.setFormatter(new SimpleFormatter());
+                _logger.addHandler(fh);
+            } catch (Throwable e) {
+                e.printStackTrace(System.err);
+            }
         }
-        return logger;
+        return _logger;
     }
 
     public static void main(String[] args) {
@@ -64,7 +66,6 @@ public class UnAar extends Application {
                         public void handleOpenFilesAction(
                                 com.sun.glass.ui.Application app, long time,
                                 String[] files) {
-                            logger.info("fx file open event triggered.");
                             super.handleOpenFilesAction(app, time, files);
                             if (files != null && files.length > 0) {
                                 if (files[0].indexOf(':') < 0
