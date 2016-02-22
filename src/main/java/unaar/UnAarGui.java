@@ -100,7 +100,7 @@ public class UnAarGui {
                                 break;
                             }
                             File f = new File(outputDir, e.name());
-                            setProgressText(f.getAbsolutePath());
+                            setProgressText(f.getAbsolutePath(), false);
                             if (e.isDirectory()) {
                                 f.mkdirs();
                             } else {
@@ -112,15 +112,15 @@ public class UnAarGui {
                                     (double) nbExtracted / (double) nbEntries);
                         }
                         if (isCancelled()) {
-                            setProgressText("Cancelled.");
+                            setProgressText("Cancelled.", true);
                         } else {
-                            setProgressText("Complete!");
+                            setProgressText("Complete!", false);
                             setProgress(1.0);
                         }
                         setButtonState("OK", false);
                     }
                 } catch (Throwable e) {
-                    setProgressText("Error: " + e.getMessage());
+                    setProgressText("Error: " + e.getMessage(), true);
                     setButtonState("OK", false);
                 }
                 return null;
@@ -142,8 +142,9 @@ public class UnAarGui {
         });
     }
 
-    private void setProgressText(String text) {
+    private void setProgressText(String text, boolean error) {
         Platform.runLater(() -> {
+            _progressText.setFill(error ? Color.RED : Color.BLACK);
             _progressText.setText(text);
         });
     }
