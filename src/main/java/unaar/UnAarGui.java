@@ -120,7 +120,7 @@ public class UnAarGui {
                         setButtonState("OK", false);
                     }
                 } catch (Throwable e) {
-                    setProgressText("Error: " + e.getMessage(), true);
+                    setProgressText("Error: " + e.getClass().getName() + ": " +e.getMessage(), true);
                     setButtonState("OK", false);
                 }
                 return null;
